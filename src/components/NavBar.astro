@@ -1,0 +1,172 @@
+---
+import Logo from "./Logo.astro";
+import NavBarLink from "./NavBarLink.astro";
+
+const { url } = Astro;
+const pathname = url.pathname;
+---
+
+<nav
+  class="w-full flex items-center justify-between h-auto lg:h-[80px] relative"
+>
+  <!-- Logo -->
+  <div class="z-20 lg:z-auto">
+    <Logo />
+  </div>
+
+  <!-- Menu Link Desktop -->
+  <ul class="hidden lg:flex items-center space-x-8">
+    <li>
+      <NavBarLink href="/" pathname={pathname} ariaLabel="Home">
+        Home
+      </NavBarLink>
+    </li>
+    <li>
+      <NavBarLink
+        href="/comercial-solar"
+        pathname={pathname}
+        ariaLabel="Comercial Solar"
+      >
+        Comercial Solar
+      </NavBarLink>
+    </li>
+    <li>
+      <NavBarLink
+        href="/residencial-solar"
+        pathname={pathname}
+        ariaLabel="Residencial Solar"
+      >
+        Residencial Solar
+      </NavBarLink>
+    </li>
+    <li>
+      <NavBarLink href="/contact" pathname={pathname} ariaLabel="Contacto">
+        Contacto
+      </NavBarLink>
+    </li>
+  </ul>
+  <!-- Menu Link Mobile -->
+  <ul
+    class="flex items-center justify-center flex-col w-full absolute m-0 p-0 top-[80px] left-0 h-[calc(100vh-80px)] lg:hidden -translate-y-full transition-transform text-center place-content-center bg-inherit"
+    id="menu-mobile"
+  >
+    <li>
+      <NavBarLink
+        href="/"
+        pathname={pathname}
+        ariaLabel="Home"
+        class="text-4xl leading-[80px]"
+      >
+        Home
+      </NavBarLink>
+    </li>
+    <li>
+      <NavBarLink
+        href="/comercial-solar"
+        pathname={pathname}
+        ariaLabel="Comercial Solar"
+        class="text-4xl leading-[80px]"
+      >
+        Comercial Solar
+      </NavBarLink>
+    </li>
+    <li>
+      <NavBarLink
+        href="/residencial-solar"
+        pathname={pathname}
+        ariaLabel="Residencial Solar"
+        class="text-4xl leading-[80px]"
+      >
+        Residencial Solar
+      </NavBarLink>
+    </li>
+    <li>
+      <NavBarLink
+        href="/contact"
+        pathname={pathname}
+        ariaLabel="Contacto"
+        class="text-4xl leading-[80px]"
+      >
+        Contacto
+      </NavBarLink>
+    </li>
+  </ul>
+  <!-- Others Buttons Desktop -->
+  <div class="hidden lg:flex items-center justify-start gap-6">
+    <button class="bg-indigo-500 p-4 rounded-md text-white"> Contact Us</button>
+
+    <button
+      class="flex items-center justify-center gap-2 rounded-md border-solid border-[1px] border-black p-4"
+    >
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g clip-path="url(#clip0_6_59)">
+          <path
+            d="M15.4575 12.8788L13.0838 10.5051C12.4175 9.83876 11.3372 9.83876 10.6709 10.5051L10.2995 10.8764C10.0006 11.1746 9.79295 11.5518 9.70082 11.9638C8.89623 11.9788 7.98632 11.842 7.20807 11.3371C6.73005 10.9818 6.27865 10.592 5.85748 10.1708C5.50169 9.81521 5.16808 9.4381 4.85854 9.0416C4.25201 8.22673 4.09195 7.23782 4.10814 6.3711C4.52012 6.27899 4.8973 6.07132 5.19545 5.77245L5.56682 5.40107C6.23314 4.73476 6.23314 3.65445 5.56682 2.9881L3.1931 0.614384C2.74889 0.170165 2.02867 0.170165 1.58448 0.614384L1.17695 1.02201C0.654511 1.54445 0.387073 2.22488 0.373167 2.90954C0.239386 4.35407 0.516042 5.94426 1.17326 7.50823C1.6072 8.54085 2.20298 9.54913 2.92857 10.4863C2.93773 10.4986 2.94642 10.511 2.9557 10.5232L2.95676 10.5224C3.32722 10.9976 3.72663 11.4496 4.15273 11.8756C4.5931 12.3163 5.06099 12.7287 5.55357 13.1101L5.54882 13.1164C5.63089 13.1786 5.7146 13.2386 5.79985 13.2964C7.87051 14.828 10.2109 15.6884 12.3888 15.6883C12.516 15.6883 12.6429 15.6847 12.769 15.6788C13.5802 15.7785 14.4273 15.5178 15.05 14.895L15.4576 14.4874C15.9018 14.0432 15.9018 13.323 15.4575 12.8788Z"
+            fill="#2A62FE"></path>
+        </g>
+        <defs>
+          <clipPath id="clip0_6_59">
+            <rect width="16" height="16" fill="white"></rect>
+          </clipPath>
+        </defs>
+      </svg>
+      +012-345-677-890
+    </button>
+  </div>
+  <!-- Menu bar Mobile -->
+  <div class="lg:hidden cursor-pointer z-10" id="menu-icon">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-8 h-8 hidden"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M6 18 18 6M6 6l12 12"></path>
+    </svg>
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-8 h-8 cursor-pointer"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+    </svg>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const menuIcon = document.getElementById("menu-icon");
+    const menuMobile = document.getElementById("menu-mobile");
+
+    if (!menuIcon || !menuMobile) {
+      return;
+    }
+    menuIcon.addEventListener("click", () => {
+      console.log("Hacemos click");
+      menuMobile.classList.toggle("translate-y-0");
+      document.body.classList.toggle("overflow-hidden");
+      menuIcon
+        .querySelectorAll("svg")
+        .forEach((svg) => svg.classList.toggle("hidden"));
+    });
+  });
+  document;
+</script>
